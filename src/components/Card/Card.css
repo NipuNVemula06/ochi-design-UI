@@ -1,0 +1,135 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+}
+
+.card-title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--primaryColor);
+  border-radius: 50%;
+}
+
+.card-imagecontainer {
+  width: 100%;
+  height: 32rem;
+  background-color: aquamarine;
+  height: calc(100% - 5rem);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.card-imagecontainer:hover {
+  transform: scale(0.95);
+}
+
+.card-imagecontainer > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: all 0.5s ease-in-out;
+}
+
+.card-imagecontainer:hover img {
+  transform: scale(1.2);
+}
+
+.card-features {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card-feature {
+  border: 1px solid var(--primaryColor);
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.card-headline {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "secondary-font";
+  color: var(--bgOne);
+  width: fit-content;
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+}
+
+.card-hovertext {
+  display: block;
+  text-align: start;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hoverchar {
+  display: inline-block;
+  position: relative;
+  font-size: 130px;
+}
+
+.card:nth-child(odd) .card-headline {
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+.card:nth-child(even) .card-headline {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 1024px) {
+  .card-imagecontainer {
+    height: 25rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-imagecontainer {
+    height: 20rem;
+  }
+
+  .card-hoverchar {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .card-imagecontainer {
+    height: 28rem;
+  }
+  .card-feature {
+    font-size: 14px;
+  }
+
+  .card-hoverchar {
+    font-size: 3.1rem;
+  }
+
+  .card:nth-child(odd) .card-headline {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .card:nth-child(even) .card-headline {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

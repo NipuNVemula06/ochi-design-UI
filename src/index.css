@@ -1,0 +1,106 @@
+@font-face {
+  font-family: "primary-font";
+  src: url("./fonts/NeueMontreal-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "secondary-font";
+  src: url("./fonts/FoundersGrotesk-Semibold.ttf");
+}
+
+:root {
+  --primaryBg: #f1f1f1;
+  --primaryColor: #212121;
+  --bgOne: #cdea68;
+  --bgTwo: #004d43;
+  --bgThree: #e73c37;
+  --lineColor: #99ad53;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primaryBg);
+  color: var(--primaryColor);
+  font-size: 16px;
+  font-family: "primary-font" !important;
+  position: relative;
+}
+
+a,
+ul,
+li {
+  all: unset;
+  font-family: inherit;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  width: 100%;
+}
+
+.outline-bottom,
+.outline-top {
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.outline-bottom:after,
+.outline-bottom:before,
+.outline-top:after,
+.outline-top:before {
+  position: absolute;
+  left: -50vw;
+  right: -50vw;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.3;
+}
+
+.outline-top:before {
+  content: "";
+  top: 0;
+}
+
+.outline-bottom:after {
+  content: "";
+  bottom: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (max-width: 535px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

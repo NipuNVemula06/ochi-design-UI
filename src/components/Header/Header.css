@@ -1,0 +1,150 @@
+.header {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 20;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo {
+  flex: 1;
+}
+
+.logo-open {
+  color: #ffffff;
+}
+
+.header-nav {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-grow: inherit;
+}
+
+.header-links > li {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.header-links li:last-child {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-menu {
+  display: none;
+}
+
+.header-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #212121;
+  width: 100%;
+  height: 100vh;
+  color: #ffffff;
+  z-index: -1;
+  padding-top: 10rem;
+}
+
+.header-menuicon {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.header-mobilelinks {
+  display: flex;
+  flex-direction: column;
+  font-family: secondary-font;
+  text-transform: uppercase;
+  font-size: 90px;
+  padding-left: 20px;
+  border-top: 1px solid #ffffff;
+}
+
+.header-mobilelinks > li {
+  line-height: 1;
+}
+
+.link-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 1.3rem;
+  overflow: hidden;
+}
+
+.link-inner > span {
+  transition: all 0.5s ease-in-out;
+}
+
+.link-inner:hover > span:nth-child(1) {
+  margin-top: -1.3rem;
+}
+
+.link::before {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.link-inner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.05rem;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transition-duration: 0.5s;
+  transform-origin: 100% 100%;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.link-inner:hover::after {
+  transform: scaleX(1);
+  transform-origin: 0 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .header-links li:last-child {
+    flex: none;
+  }
+  .header-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+
+  .header-menu {
+    display: block;
+  }
+}
