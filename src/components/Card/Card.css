@@ -114,7 +114,7 @@
 
 @media screen and (max-width: 578px) {
   .card-imagecontainer {
-    height: 28rem;
+    height: 20rem;
   }
   .card-feature {
     font-size: 14px;

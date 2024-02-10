@@ -164,8 +164,9 @@
   }
 
   .hero-image {
-    height: 41.6px;
-    width: 64px;
+    /* height: 41.6px;
+    width: 64px; */
+    display: none;
   }
   .hero-bottom-list {
     flex-direction: column;
