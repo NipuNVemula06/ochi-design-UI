@@ -5,25 +5,10 @@ import { CgArrowTopRight } from "react-icons/cg";
 import { motion } from "framer-motion";
 
 const Hero = () => {
-  const [width, setWidth] = useState("8rem");
+  const [showImage, setShowImage] = useState(null);
 
   useEffect(() => {
-    const getWidth = () => {
-      const windowSize = typeof window === "undefined" ? {} : window.innerWidth;
-      if (windowSize <= 576) {
-        setWidth("64px");
-      } else if (windowSize > 576 && windowSize <= 768) {
-        setWidth("90px");
-      } else if (windowSize > 786 && windowSize <= 1024) {
-        setWidth("100px");
-      } else {
-        setWidth("8rem");
-      }
-    };
-    window.addEventListener("resize", getWidth);
-    return () => {
-      window.removeEventListener("resize", getWidth);
-    };
+    setShowImage(contentimage);
   }, []);
 
   return (
@@ -38,18 +23,16 @@ const Hero = () => {
           <h1 className="hero-title">
             <div>We create</div>
             <div className="hero-imagecontainer">
-              <motion.div
-                initial={{ width: "0%" }}
-                animate={{ width: width }}
-                transition={{
-                  ease: [0.76, 0, 0.24, 1],
-                  duration: 1,
-                }}
-                className="hero-image"
+              <div
+                className={`hero-image ${showImage ? "show-hero-image" : ""}`}
               >
-                <img src={contentimage} alt="content-image" />
-              </motion.div>
-              eye-opening
+                <img
+                  src={contentimage}
+                  alt="content-image"
+                  className="hero-img"
+                />
+              </div>
+              <span>eye-opening</span>
             </div>
             <div>presentations</div>
           </h1>
