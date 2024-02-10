@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Playground.css";
+import bgImage from "../../assets/Top-Viewbbcbv-1-scaled.jpg";
 
 const Playground = () => {
   const [angle, setAngle] = useState(0);
@@ -26,15 +27,23 @@ const Playground = () => {
     return degree;
   };
 
+  // data-scroll
+  //       data-scroll-section
+  //       data-scroll-speed="-0.6"
+
   return (
     <div className="playground">
-      <div
-        data-scroll
-        data-scroll-section
-        data-scroll-speed="-0.6"
-        className="playground-container"
-      >
-        <div className="playground-eyes">
+      <div className="pg-wrapper">
+        <div className="pg-imagewrapper">
+          <img
+            src={bgImage}
+            alt="image"
+            width="1440"
+            height="921"
+            className="pg-image"
+          />
+        </div>
+        <div className="pg-eyeswrapper">
           <div className="playground-outerlayer">
             <div
               id="eye"
@@ -58,9 +67,17 @@ const Playground = () => {
             </div>
           </div>
         </div>
+        {/* <div>eyes</div>
+            <div>button</div> */}
       </div>
     </div>
   );
 };
 
 export default Playground;
+
+{
+  /* <div className="playground-eyes">
+          
+        </div> */
+}

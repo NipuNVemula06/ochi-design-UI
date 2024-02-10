@@ -13,7 +13,6 @@
 .movingtext-container {
   padding-top: 5rem;
   padding-bottom: 8rem;
-  /* padding-bottom: 20rem; */
   overflow-x: hidden;
 }
 
@@ -87,5 +86,15 @@
   .moving-text {
     font-size: 135px;
     margin-bottom: 1rem;
+  }
+  .movingtext {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .movingtext-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 }
